@@ -31,63 +31,6 @@ tasks.test {
     testLogging {
         events 'passed', 'skipped', 'failed'
     }
-    
-    // Generar reportes Cucumber después de los tests
-    doLast {
-        generateCucumberReportsFromKarateOutput()
-    }
-}
-
-// Tarea para generar reportes de Cucumber
-task generateCucumberReports(type: JavaExec) {
-    group = 'verification'
-    description = 'Generate Cucumber HTML reports'
-    classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.mycompany.CucumberReportGenerator'
-    
-    // Buscar archivos JSON generados por Karate
-    def karateOutputDir = file('target')
-    def jsonFiles = karateOutputDir.listFiles(new FileFilter() {
-        boolean accept(File file) {
-            return file.name.endsWith('.json')
-        }
-    })
-    
-    if (jsonFiles != null && jsonFiles.length > 0) {
-        args jsonFiles[0].absolutePath, 'target/cucumber-reports'
-    }
-}
-
-// Función para generar reportes desde salida de Karate
-def generateCucumberReportsFromKarateOutput() {
-    def karateOutputDir = file('target')
-    def jsonFiles = karateOutputDir.listFiles(new FileFilter() {
-        boolean accept(File file) {
-            return file.name.endsWith('.json')
-        }
-    })
-    
-    if (jsonFiles != null && jsonFiles.length > 0) {
-        println "Found Karate JSON reports: ${jsonFiles.collect { it.name }}"
-        
-        // Crear directorio de reportes si no existe
-        file('target/cucumber-reports').mkdirs()
-        
-        try {
-            javaexec {
-                classpath = sourceSets.test.runtimeClasspath
-                mainClass = 'com.mycompany.CucumberReportGenerator'
-                args = [
-                    jsonFiles[0].absolutePath,
-                    'target/cucumber-reports'
-                ]
-            }
-        } catch (e) {
-            println "Note: Cucumber report generation completed. JSON reports available at: ${jsonFiles.collect { it.absolutePath }}"
-        }
-    } else {
-        println 'No Karate JSON reports found in target directory'
-    }
 }
 
 // Configuración para que Karate encuentre los archivos .feature
