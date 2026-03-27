@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="examples.idiomas.IdiomasRunner" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-03-27T04:20:35" hostname="AMAJV6YJQ2X5Y" time="6.374">
+  <properties/>
+  <testcase name="[1:16] Eliminar idioma y validar status 204 y body vacío (no null)" classname="examples.idiomas.IdiomasRunner" time="2.238"/>
+  <testcase name="[1:14] Actualizar idioma y validar status 200 y tipo de dato en el body" classname="examples.idiomas.IdiomasRunner" time="0.716"/>
+  <testcase name="[2:25] Actualizar idioma y validar status 200 y body completo en la respuesta" classname="examples.idiomas.IdiomasRunner" time="0.813"/>
+  <testcase name="[1:8] Crear idioma y validar status 201 y tipo de dato en el id" classname="examples.idiomas.IdiomasRunner" time="0.337"/>
+  <testcase name="[2.1:30] Crear idioma y validar status 201 y body completo (id solo tipo)" classname="examples.idiomas.IdiomasRunner" time="0.336"/>
+  <testcase name="[2.2:31] Crear idioma y validar status 201 y body completo (id solo tipo)" classname="examples.idiomas.IdiomasRunner" time="0.437"/>
+  <testcase name="[1:14] Consultar idioma por ID y validar status 200 y tipos de datos en el body" classname="examples.idiomas.IdiomasRunner" time="0.675"/>
+  <testcase name="[2:23] Consultar idioma por ID y validar status 200 y valor del id en el body" classname="examples.idiomas.IdiomasRunner" time="0.795"/>
+  <system-out><![CDATA[Starting Karate tests with custom Cucumber reporting...
+23:20:35.341 [Test worker] INFO  com.intuit.karate.Runner - using system property 'karate.options': --output target
+23:20:35.404 [Test worker] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+23:20:35.845 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:35.971 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 102
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Temporal-3cacf636-a393-4837-9e03-12a32a6cc2d5","descripcion":"Idioma temporal para DELETE"}
+
+23:20:36.660 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 683
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:36 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a8069c31ed3-BOG
+1 < rndr-id: e8ee9822-2e42-42a4
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":14,"idioma":"Temporal-3cacf636-a393-4837-9e03-12a32a6cc2d5","descripcion":"Idioma temporal para DELETE"}
+
+23:20:36.676 [Test worker] DEBUG com.intuit.karate - request:
+2 > DELETE https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas/14
+2 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+
+
+23:20:37.375 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 698
+2 < 204
+2 < Date: Fri, 27 Mar 2026 04:20:37 GMT
+2 < Connection: keep-alive
+2 < CF-RAY: 9e2b9a82db59c7d5-BOG
+2 < rndr-id: 33b8e1ae-d672-4507
+2 < x-render-origin-server: Render
+2 < cf-cache-status: DYNAMIC
+2 < Server: cloudflare
+2 < alt-svc: h3=":443"; ma=86400
+
+
+---------------------------------------------------------
+feature: classpath:examples/idiomas/delete-idiomas.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 1,5397
+---------------------------------------------------------
+
+Karate version: 1.5.0
+======================================================
+elapsed:   2,27 | threads:    1 | thread time: 1,54 
+features:     1 | skipped:    0 | efficiency: 0,68
+scenarios:    1 | passed:     1 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.5.0
+file:///Users/marcela.gomez/IdeaProjects/upskilling-gradle/build/karate-reports/karate-summary.html
+===================================================================
+
+23:20:37.655 [Test worker] INFO  com.intuit.karate.Runner - using system property 'karate.options': --output target
+23:20:37.659 [Test worker] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+23:20:37.664 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:37.665 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 59
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:38.019 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 353
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:38 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a88fbe9492b-BOG
+1 < rndr-id: 43ff4c99-892c-46d4
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":15,"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:38.026 [Test worker] DEBUG com.intuit.karate - request:
+2 > PUT https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas/15
+2 > Content-Type: application/json; charset=UTF-8
+2 > Content-Length: 64
+2 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+{"idioma":"Italiano","descripcion":"Idioma actualizado por PUT"}
+
+23:20:38.369 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 341
+2 < 200
+2 < Date: Fri, 27 Mar 2026 04:20:38 GMT
+2 < Content-Type: application/json
+2 < Transfer-Encoding: chunked
+2 < Connection: keep-alive
+2 < rndr-id: a0b16f7f-4f0e-4765
+2 < vary: Accept-Encoding
+2 < x-render-origin-server: Render
+2 < cf-cache-status: DYNAMIC
+2 < Server: cloudflare
+2 < CF-RAY: 9e2b9a8b6adfc0fa-BOG
+2 < alt-svc: h3=":443"; ma=86400
+{"id":15,"idioma":"Italiano","descripcion":"Idioma actualizado por PUT"}
+
+23:20:38.386 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:38.391 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 59
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:38.735 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 343
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:38 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a8d99171bc9-BOG
+1 < rndr-id: 6729e88c-e33d-4114
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":16,"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:38.742 [Test worker] DEBUG com.intuit.karate - request:
+2 > PUT https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas/16
+2 > Content-Type: application/json; charset=UTF-8
+2 > Content-Length: 72
+2 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+{"idioma":"Italiano","descripcion":"Idioma actualizado por segundo PUT"}
+
+23:20:39.088 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 344
+2 < 200
+2 < Date: Fri, 27 Mar 2026 04:20:39 GMT
+2 < Content-Type: application/json
+2 < Transfer-Encoding: chunked
+2 < Connection: keep-alive
+2 < rndr-id: c6cff92c-d88b-48a4
+2 < vary: Accept-Encoding
+2 < x-render-origin-server: Render
+2 < cf-cache-status: DYNAMIC
+2 < Server: cloudflare
+2 < CF-RAY: 9e2b9a8fd825b290-BOG
+2 < alt-svc: h3=":443"; ma=86400
+{"id":16,"idioma":"Italiano","descripcion":"Idioma actualizado por segundo PUT"}
+
+---------------------------------------------------------
+feature: classpath:examples/idiomas/put-idiomas.feature
+scenarios:  2 | passed:  2 | failed:  0 | time: 1,4130
+---------------------------------------------------------
+
+Karate version: 1.5.0
+======================================================
+elapsed:   1,51 | threads:    1 | thread time: 1,41 
+features:     1 | skipped:    0 | efficiency: 0,93
+scenarios:    2 | passed:     2 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.5.0
+file:///Users/marcela.gomez/IdeaProjects/upskilling-gradle/build/karate-reports/karate-summary.html
+===================================================================
+
+23:20:39.191 [Test worker] INFO  com.intuit.karate.Runner - using system property 'karate.options': --output target
+23:20:39.195 [Test worker] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+23:20:39.199 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:39.200 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 62
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Italiano","descripcion":"Idioma hablado en Italia"}
+
+23:20:39.524 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 322
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:39 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a929d1b0172-BOG
+1 < rndr-id: 74a1e557-720a-406b
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":17,"idioma":"Italiano","descripcion":"Idioma hablado en Italia"}
+
+23:20:39.545 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:39.549 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 64
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Portugués","descripcion":"Idioma hablado en Brasil"}
+
+23:20:39.866 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 316
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:40 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a94c894265e-BOG
+1 < rndr-id: 823d5e32-c6f9-4fc7
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":18,"idioma":"Portugués","descripcion":"Idioma hablado en Brasil"}
+
+23:20:39.890 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:39.893 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 62
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Japonés","descripcion":"Idioma hablado en Japón"}
+
+23:20:40.204 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 310
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:40 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a96e870b61c-BOG
+1 < rndr-id: e0f04613-9875-4070
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":19,"idioma":"Japonés","descripcion":"Idioma hablado en Japón"}
+
+---------------------------------------------------------
+feature: classpath:examples/idiomas/post-idiomas.feature
+scenarios:  3 | passed:  3 | failed:  0 | time: 0,9709
+---------------------------------------------------------
+
+Karate version: 1.5.0
+======================================================
+elapsed:   1,08 | threads:    1 | thread time: 0,97 
+features:     1 | skipped:    0 | efficiency: 0,90
+scenarios:    3 | passed:     3 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.5.0
+file:///Users/marcela.gomez/IdeaProjects/upskilling-gradle/build/karate-reports/karate-summary.html
+===================================================================
+
+23:20:40.311 [Test worker] INFO  com.intuit.karate.Runner - using system property 'karate.options': --output target
+23:20:40.314 [Test worker] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+23:20:40.317 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:40.318 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 59
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:40.654 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 335
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:40 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a99992452a3-BOG
+1 < rndr-id: e96c524b-b737-47f0
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":20,"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:40.656 [Test worker] DEBUG com.intuit.karate - request:
+2 > GET https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas/20
+2 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+
+
+23:20:40.988 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 331
+2 < 200
+2 < Date: Fri, 27 Mar 2026 04:20:41 GMT
+2 < Content-Type: application/json
+2 < Transfer-Encoding: chunked
+2 < Connection: keep-alive
+2 < rndr-id: 54d5021a-2680-468b
+2 < vary: Accept-Encoding
+2 < x-render-origin-server: Render
+2 < cf-cache-status: DYNAMIC
+2 < Server: cloudflare
+2 < CF-RAY: 9e2b9a9bbd67ae73-BOG
+2 < alt-svc: h3=":443"; ma=86400
+{"id":20,"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:41.000 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+23:20:41.005 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 59
+1 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:41.353 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 346
+1 < 201
+1 < Date: Fri, 27 Mar 2026 04:20:41 GMT
+1 < Content-Type: application/json
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < CF-RAY: 9e2b9a9dfa42386d-BOG
+1 < rndr-id: da7f1c36-db59-4c92
+1 < vary: Accept-Encoding
+1 < x-render-origin-server: Render
+1 < cf-cache-status: DYNAMIC
+1 < Server: cloudflare
+1 < alt-svc: h3=":443"; ma=86400
+{"id":21,"idioma":"Test Language","descripcion":"Test Description"}
+
+23:20:41.360 [Test worker] DEBUG com.intuit.karate - request:
+2 > GET https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1/idiomas/21
+2 > Host: labqa-api-rest-crud-basic-tqa.onrender.com
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+
+
+23:20:41.720 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 359
+2 < 200
+2 < Date: Fri, 27 Mar 2026 04:20:41 GMT
+2 < Content-Type: application/json
+2 < Transfer-Encoding: chunked
+2 < Connection: keep-alive
+2 < rndr-id: 52ce42b7-54cb-4474
+2 < vary: Accept-Encoding
+2 < x-render-origin-server: Render
+2 < cf-cache-status: DYNAMIC
+2 < Server: cloudflare
+2 < CF-RAY: 9e2b9aa02b03b6ac-BOG
+2 < alt-svc: h3=":443"; ma=86400
+{"id":21,"idioma":"Test Language","descripcion":"Test Description"}
+
+---------------------------------------------------------
+feature: classpath:examples/idiomas/get-idiomas.feature
+scenarios:  2 | passed:  2 | failed:  0 | time: 1,3924
+---------------------------------------------------------
+
+Karate version: 1.5.0
+======================================================
+elapsed:   1,46 | threads:    1 | thread time: 1,39 
+features:     1 | skipped:    0 | efficiency: 0,95
+scenarios:    2 | passed:     2 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.5.0
+file:///Users/marcela.gomez/IdeaProjects/upskilling-gradle/build/karate-reports/karate-summary.html
+===================================================================
+
+Generating custom Cucumber reports...
+Cucumber-style reports generated in: build/cucumber-reports
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

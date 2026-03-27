@@ -1,0 +1,228 @@
+openapi: 3.0.3
+info:
+  title: API de Idiomas
+  description: CRUD de idiomas. Desarrollado por - [TribuQA](https://github.com/TribuQA).
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Servidor local de desarrollo
+  - url: https://labqa-api-rest-crud-basic-tqa.onrender.com/api/v1
+    description: Servidor Produccion
+
+paths:
+  /idiomas/{id}:
+    get:
+      summary: Obtiene un idioma por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID numérico del idioma
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Idioma encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Idioma'
+              examples:
+                ejemplo:
+                  value:
+                    id: 1
+                    idioma: "Español"
+                    descripcion: "Idioma hablado en España y Latinoamérica"
+        '400':
+          description: El ID proporcionado no es válido (no numérico o inválido)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "BAD REQUEST"
+        '404':
+          description: Idioma no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "NOT FOUND"
+
+    put:
+      summary: Actualiza un idioma por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID numérico del idioma a actualizar
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdiomaRequest'
+            examples:
+              ejemplo:
+                value:
+                  idioma: "Inglés"
+                  descripcion: "Idioma hablado en varios países"
+      responses:
+        '200':
+          description: Idioma actualizado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Idioma'
+              examples:
+                ejemplo:
+                  value:
+                    id: 1
+                    idioma: "Inglés"
+                    descripcion: "Idioma hablado en varios países"
+        '400':
+          description: Request inválido (faltan campos obligatorios o datos erróneos)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "BAD REQUEST"
+        '404':
+          description: Idioma no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "NOT FOUND"
+
+    delete:
+      summary: Elimina un idioma por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID numérico del idioma a eliminar
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '204':
+          description: Idioma eliminado correctamente (sin body)
+        '400':
+          description: El ID proporcionado no es válido (no numérico o inválido)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "BAD REQUEST"
+        '404':
+          description: Idioma no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "NOT FOUND"
+
+  /idiomas:
+    post:
+      summary: Crea un nuevo idioma
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdiomaRequest'
+            examples:
+              ejemplo:
+                value:
+                  idioma: "Francés"
+                  descripcion: "Idioma hablado en Francia"
+      responses:
+        '201':
+          description: Idioma creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Idioma'
+              examples:
+                ejemplo:
+                  value:
+                    id: 2
+                    idioma: "Francés"
+                    descripcion: "Idioma hablado en Francia"
+        '400':
+          description: Request inválido (faltan campos obligatorios o datos erróneos)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                ejemplo:
+                  value:
+                    message: "BAD REQUEST"
+
+components:
+  schemas:
+    Idioma:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        idioma:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "Español"
+        descripcion:
+          type: string
+          maxLength: 255
+          nullable: true
+          example: "Idioma hablado en España y Latinoamérica"
+      required:
+        - id
+        - idioma
+
+    IdiomaRequest:
+      type: object
+      properties:
+        idioma:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "Alemán"
+        descripcion:
+          type: string
+          maxLength: 255
+          nullable: true
+          example: "Idioma hablado principalmente en Alemania"
+      required:
+        - idioma
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "BAD REQUEST"
