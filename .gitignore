@@ -1,0 +1,82 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Logs
+*.log
+karate.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Gradle daemon
+*.pid
+*.lock
+*.pid.lock
+
+# Gradle build cache
+.gradle/buildOutputCleanup/
+.gradle/configuration-cache/
+.gradle/executionHistory/
+.gradle/file-system.probe/
+.gradle/fileHashes/
+.gradle/vcs-1/
+
+# Test reports (keep source, exclude generated)
+build/reports/
+build/test-results/
+build/karate-reports/
+build/cucumber-reports/
+!src/test/java/**/*.feature
+!src/test/resources/**/*.feature
