@@ -31,7 +31,7 @@ upskilling-gradle/
 ## Dependencias Principales
 
 - **Karate JUnit5**: 1.5.0
-- **Java**: 17
+- **Java**: 21
 - **Testing**: JUnit5 Platform
 
 ## Comandos Gradle
@@ -59,7 +59,7 @@ upskilling-gradle/
 ## Configuración
 
 El proyecto está configurado para:
-- Java 17
+- Java 21
 - UTF-8 encoding
 - JUnit5 Platform
 - Karate Framework para testing de APIs REST
