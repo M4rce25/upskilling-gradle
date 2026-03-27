@@ -6,7 +6,7 @@ Proyecto de testing con Karate Framework migrado de Maven a Gradle.
 
 ```
 upskilling-gradle/
-├── build.gradle.kts          # Configuración de Gradle
+├── build.gradle             # Configuración de Gradle (Groovy)
 ├── src/
 │   └── test/
 │       └── java/
